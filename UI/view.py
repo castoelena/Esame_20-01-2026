@@ -27,13 +27,14 @@ class View:
 
         #row1
         self.txtNumAlbumMin = ft.TextField( label="Numero album minimo", width=250)
-        self._btnCreateGraph = ft.ElevatedButton(text="Crea grafo", on_click=self._controller.handle_create_graph )
+        self._btnCreateGraph = ft.ElevatedButton(text="Crea grafo", on_click=self._controller.handle_create_graph)
         row1 = ft.Row([self.txtNumAlbumMin, self._btnCreateGraph],
                       alignment=ft.MainAxisAlignment.CENTER)
         self._page.controls.append(row1)
 
         #row2
-        self.ddArtist = ft.Dropdown(label="Artista", width = 250, disabled=True)
+        self.ddArtist = ft.Dropdown(label="Artista", width = 250, disabled=True, on_change=self.controller.choice_artists)
+        self.controller.populate_dd_artists()
         self.btnArtistsConnected = ft.ElevatedButton(text="Artisti collegati", width = 150, disabled=True, on_click=self._controller.handle_connected_artists )
         row2 = ft.Row([self.ddArtist, self.btnArtistsConnected],
                       alignment=ft.MainAxisAlignment.CENTER)

@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import networkx as nx
+
 from model.model import Model
 
 my_model = Model()
@@ -46,4 +47,3 @@ nx.draw_networkx_edge_labels(G, pos, edge_labels=labels)
 plt.savefig("plot")
 plt.show()
 """
-
